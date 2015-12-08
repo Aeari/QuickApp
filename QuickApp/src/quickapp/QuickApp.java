@@ -37,7 +37,7 @@ public class QuickApp  {
         Connection con;
         Statement stmt = null;
         try{
-        con = DriverManager.getConnection("jdbc:mysql://localhost/newdb", "Ari", "aripw1");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/NAME OF DATABASE", "ENTER YOUR USERNAME HERE", "ENTER YOUR PASSWORD HERE");
         stmt = (Statement) con.createStatement();
         }
      catch(Exception e){} 
@@ -80,7 +80,7 @@ frame.setVisible(true);
         Gson gson = new Gson();
         String MyJSONString = gson.toJson(John);
         //Concantinating the string to be sent to MySQL
-        String msgtosend = "INSERT INTO test VALUES ('"+MyJSONString +"')";
+        String msgtosend = "INSERT INTO 'NAME OF YOUR SQL TABLE' VALUES ('"+MyJSONString +"')";
         try { 
             //Sending the Full message to MySQL with the executeUpdate method
             stmt.executeUpdate(msgtosend);
